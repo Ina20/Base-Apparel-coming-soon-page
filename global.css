@@ -2,6 +2,7 @@ body {
   font-family: 'Josefin Sans', sans-serif;
   background-image: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
   margin: 0;
+  font-size: 16px;
 }
 .grid-container {
   display: grid;
@@ -20,6 +21,9 @@ body {
 }
 #image img {
   width: 100%;
+}
+#desktop {
+  display: none;
 }
 #title {
   line-height: 1px;
@@ -58,7 +62,7 @@ input {
 }
 button {
   position: absolute;
-  right: 63px;
+  right: 10%;
   border: none;
   border-radius: 20px;
   height: 45px;
@@ -71,6 +75,68 @@ footer {
 @media only screen and (min-width: 600px) {
   body {
     font-family: 'Josefin Sans', sans-serif;
-    background: lightblue;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 100px 220px 230px auto;
+    width: 100%;
+    justify-items: center;
+    height: 96vh;
+  }
+  #logo {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    margin: 30px 0 0 100px;
+  }
+  #title {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    margin: 30px 0 0 100px;
+    justify-self: start;
+    text-align: left;
+  }
+  #text {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    margin: 0 100px 0 100px;
+    justify-self: start;
+    text-align: left;
+  }
+  #mail {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    margin: 0 100px 0 100px;
+    width: 85%;
+    justify-self: start;
+    text-align: left;
+  }
+  #image {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 5;
+    background: pink;
+  }
+  #image img {
+    height: 100%;
+  }
+  #mobile {
+    display: none;
+  }
+  #desktop {
+    display: block;
+  }
+  button {
+    width: 7%;
+    right: 51%;
   }
 }
