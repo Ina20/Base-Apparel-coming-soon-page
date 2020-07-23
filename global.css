@@ -10,13 +10,15 @@ body {
   width: 100%;
   justify-items: center;
 }
-.grid-item {
-  }
 #logo {
   justify-self: start;
   margin: 30px 0 30px 30px;
 }
 #image {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 2;
+  grid-row-end: 3;
   width: 100%;
 }
 #image img {
@@ -68,10 +70,20 @@ button {
   height: 45px;
   width: 10%;
   background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  box-shadow: 1px 7px 12px hsl(0, 36%, 70%);
 }
+  button:hover {
+    background: hsl(0, 80%, 86%);
+  }
 footer {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
   margin-top: 20px;
+  justify-self: center;
 }
+
 @media only screen and (min-width: 600px) {
   body {
     font-family: 'Josefin Sans', sans-serif;
@@ -83,20 +95,29 @@ footer {
     width: 100%;
     justify-items: center;
     height: 96vh;
+    margin-left: 120px;
+  }
+  #left {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 5;
+    align-self: center;
+    justify-self: start;
   }
   #logo {
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 1;
     grid-row-end: 2;
-    margin: 30px 0 0 100px;
+    margin: 50px 0 100px 0px;
   }
   #title {
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 2;
     grid-row-end: 3;
-    margin: 30px 0 0 100px;
+    margin: 30px 0 0 0px;
     justify-self: start;
     text-align: left;
   }
@@ -105,7 +126,7 @@ footer {
     grid-column-end: 2;
     grid-row-start: 3;
     grid-row-end: 4;
-    margin: 0 100px 0 100px;
+    margin: 0 150px 0 0px;
     justify-self: start;
     text-align: left;
   }
@@ -114,8 +135,8 @@ footer {
     grid-column-end: 2;
     grid-row-start: 4;
     grid-row-end: 5;
-    margin: 0 100px 0 100px;
-    width: 85%;
+    margin-top: 25px;
+    width: 500px;
     justify-self: start;
     text-align: left;
   }
@@ -123,11 +144,12 @@ footer {
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 1;
-    grid-row-end: 5;
-    background: pink;
+    grid-row-end: 4;
+    height: 100vh;
   }
   #image img {
-    height: 100%;
+    height: 100vh;
+    object-fit: cover;
   }
   #mobile {
     display: none;
@@ -136,7 +158,7 @@ footer {
     display: block;
   }
   button {
-    width: 7%;
-    right: 51%;
+    width: 60px;
+    left: 460px;
   }
 }
